@@ -1,10 +1,10 @@
-import { AntDesign } from '@expo/vector-icons';
-import React, { useCallback, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AntDesign } from "@expo/vector-icons";
+import React, { useCallback, useState } from "react";
+import { StyleSheet, Text, View } from "react-native";
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
-} from 'react-native-gesture-handler';
+} from "react-native-gesture-handler";
 import Animated, {
   interpolate,
   runOnJS,
@@ -12,12 +12,12 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withSpring,
-} from 'react-native-reanimated';
+} from "react-native-reanimated";
 
 const ICON_SIZE = 20;
 
 const clamp = (value: number, min: number, max: number) => {
-  'worklet';
+  "worklet";
   return Math.min(Math.max(value, min), max);
 };
 
@@ -125,19 +125,19 @@ const SlidingCounter = () => {
   return (
     <Animated.View style={[styles.button, rButtonStyle]}>
       <Animated.View style={rPlusMinusIconStyle}>
-        <AntDesign name="minus" color={'white'} size={ICON_SIZE} />
+        <AntDesign name="minus" color={"#FF6C99"} size={ICON_SIZE} />
       </Animated.View>
       <Animated.View style={rCloseIconStyle}>
-        <AntDesign name="close" color={'white'} size={ICON_SIZE} />
+        <AntDesign name="close" color={"white"} size={ICON_SIZE} />
       </Animated.View>
       <Animated.View style={rPlusMinusIconStyle}>
-        <AntDesign name="plus" color={'white'} size={ICON_SIZE} />
+        <AntDesign name="plus" color={"#6CFFB3"} size={ICON_SIZE} />
       </Animated.View>
       <View
         style={{
           ...StyleSheet.absoluteFillObject,
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <PanGestureHandler onGestureEvent={onPanGestureEvent}>
@@ -156,23 +156,23 @@ const styles = StyleSheet.create({
   button: {
     height: 70,
     width: BUTTON_WIDTH,
-    backgroundColor: '#111111',
+    backgroundColor: "#111111",
     borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    flexDirection: 'row',
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    flexDirection: "row",
   },
   countText: {
     fontSize: 25,
-    color: 'white',
+    color: "white",
   },
   circle: {
     height: 50,
     width: 50,
-    backgroundColor: '#232323',
+    backgroundColor: "#282828",
     borderRadius: 25,
-    position: 'absolute',
-    justifyContent: 'center',
-    alignItems: 'center',
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
